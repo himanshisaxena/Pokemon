@@ -1,29 +1,32 @@
-import createAbilitiesList from './createAbilitiesList.js';
+import createAbilities from "./createAbilities.js"
 
 const createPokemon = (pokemonData) => {
-    // container
-    const container = document.createElement('div');
-    container.className = 'pokemon-container';
-    container.id = 'container';
+ 
+//container
+const pokemonContainer = document.createElement('div');
+pokemonContainer.className = 'pokemon-card';
+pokemonContainer.id = 'container';
 
-    // Create and append the name
-    const name = document.createElement('h2');
-    name.innerText = pokemonData.name;
-    name.id = 'name';
+// h2 tag for pokemon name
+const title = document.createElement('h2');
+title.innerText = pokemonData.name;
+title.id = 'name';
 
-    // Create and append the image
-    const image = document.createElement('img');
-    image.src = pokemonData.sprites.front_default;
-    image.alt = `${pokemonData.name} Image`;
-    image.id = 'img';
+//img tag for pokemon image
+const image = document.createElement('img');
+image.src = pokemonData.sprites.back_default;
+image.alt = `${pokemonData.name} Image`;
+image.id = 'img';
 
-    // Create and append the abilities
-    const abilitiesHeader = document.createElement('h3');
-    abilitiesHeader.innerText = 'Abilities:';
-    const abilitiesList = createAbilitiesList(pokemonData.abilities);
+// create the h3 for abilities
 
-    container.append(name, image, abilitiesHeader, abilitiesList);
-    return container;
-};
+const abilitiesHeader = document.createElement('h3');
+abilitiesHeader.innerText = 'Abilities:';
+const abilities = createAbilities(pokemonData.abilities);
+
+pokemonContainer.append(title, image, abilitiesHeader, abilities);
+return pokemonContainer;
+}
+
 
 export default createPokemon;

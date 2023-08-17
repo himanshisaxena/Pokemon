@@ -1,5 +1,6 @@
-import clickEvent from './events/clickEvent.js';
-import enterEvent from './events/enterEvent.js';
+import clickEventListener from "./events/clickEvent.js";
+import enterEventListener from "./events/enterEvent.js";
 
-clickEvent();
-enterEvent();
+clickEventListener();
+enterEventListener();
+

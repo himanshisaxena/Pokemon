@@ -1,8 +1,8 @@
-import dom from '../dom.js';
-import getPokemonHandler from '../handlers/getPokemonHandler.js';
+import getPokemonHandler from "../handlers/pokemonHandler.js";
+import dom from "../dom.js"
 
-const clickEvent = () => {
-    dom.btn.addEventListener('click', getPokemonHandler);
+const clickEventListener = () => {
+dom.searchBtn.addEventListener('click', getPokemonHandler)
 };
 
-export default clickEvent;
+export default clickEventListener;

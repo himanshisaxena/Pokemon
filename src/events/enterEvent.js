@@ -1,12 +1,12 @@
-import dom from '../dom.js';
-import getPokemonHandler from '../handlers/getPokemonHandler.js';
+import getPokemonHandler from "../handlers/pokemonHandler.js";
+import dom from "../dom.js"
 
-const enterEvent = () => {
-    dom.input.addEventListener('keyup', (e) => {
-        if (e.key === 'Enter') {
-            getPokemonHandler();
-        }
-    });
-};
+const enterEventListener = () => {
+dom.searchBar.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        getPokemonHandler();
+    }
+});
+}
 
-export default enterEvent;
+export default enterEventListener;
