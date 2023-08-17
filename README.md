@@ -1,6 +1,6 @@
 # Get Pokemon
 
-> A simple website allows the user to get a pokemon by id.
+> A simple website allows the user to get a multiple pokemon by id.
 
 ## Table of contents
 
@@ -19,7 +19,7 @@
 
 ## Screenshots
 
-![Example screenshot](./assets/screenShot.png)
+![Example screenshot](../Pokemon/public/Screenshot.jpg)
 
 ## Technologies
 
@@ -36,38 +36,19 @@
 ## Code Examples
 
 ```js
-const getPokemonById = async (id) => {
-  try {
-    const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
-
-    if (!res.ok) {
-      throw new Error(`An error has occurred: ${res.status}`);
-    }
-
-    const data = await res.json();
-    return data;
-  } catch (err) {
-    console.error('There was an error fetching the Pokémon:', err);
-    return null;
+if (validIds.length === 0) {
+    errorText.innerText = 'Please enter a valid Pokemon ID';
+    dom.container.innerHTML = '';
+    dom.container.append(errorText);
+    return;
   }
-};
 
-export default getPokemonById;
 ```
-
-## Features
-
-List of features ready and Todos for future development
-
--
--
--
-
-To-do list:
-
--
--
 
 ## Status
 
-Project is: _in progress_
+Project is: _Done_
+
+## Contact
+
+[Himanshi Saxena](https://github.com/himanshisaxena)
